@@ -34,8 +34,8 @@ function matchAndSendEmails() {
     console.log('Secret Santa matches made and emails sent!');
 }
 
-// Schedule the matching and email sending to run every 3 days at midnight
-cron.schedule('*/2 * * * *', () => {  // Every 5 minutes
+// Schedule the matching and email sending to run every 2 minutes
+cron.schedule('*/2 * * * *', () => {  // Every 2 minutes
     console.log('Running Secret Santa matching and email sending...');
     matchAndSendEmails();
 });
