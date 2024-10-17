@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Schedule Secret Santa matching for 1 week later
     document.getElementById("schedule-matching").addEventListener("click", function() {
-        if (participants.length < 13) {
-            alert("You need at least 13 participants to schedule matching.");
+        if (participants.length < 2) {
+            alert("You need at least 2 participants to schedule matching.");
             return;
         }
 
