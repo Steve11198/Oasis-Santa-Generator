@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+require('dotenv').config();  // Load environment variables from .env file
 
 // Function to send Secret Santa emails
 function sendSecretSantaEmail(senderEmail, recipientName, recipientEmail) {
@@ -6,14 +7,14 @@ function sendSecretSantaEmail(senderEmail, recipientName, recipientEmail) {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'gastema19@gmail.com',  // Replace with your Gmail email
-            pass: 'tmwy xdbs xrqg azjw'      // Replace with your App Password
+            user: process.env.GMAIL_USER,  // Use environment variables
+            pass: process.env.GMAIL_PASS   // Use environment variables
         }
     });
 
     // Email content
     let mailOptions = {
-        from: 'your-email@gmail.com',  // Sender email
+        from: process.env.GMAIL_USER,   // Sender email
         to: senderEmail,               // Email of the Secret Santa
         subject: 'Your Secret Santa Assignment',
         text: `You are the Secret Santa for ${recipientName}. Their email is ${recipientEmail}.`
@@ -22,9 +23,9 @@ function sendSecretSantaEmail(senderEmail, recipientName, recipientEmail) {
     // Send the email
     transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
-            console.log('Error sending email:', error);
+            console.error(`Failed to send email to ${senderEmail}:`, error);
         } else {
-            console.log('Email sent: ' + info.response);
+            console.log(`Email sent successfully to ${senderEmail}:`, info.response);
         }
     });
 }
