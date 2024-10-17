@@ -7,8 +7,8 @@ function sendSecretSantaEmail(senderEmail, recipientName, recipientEmail) {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.GMAIL_USER,  // Use environment variables
-            pass: process.env.GMAIL_PASS   // Use environment variables
+            user: 'gastema19@gmail.com',  // Replace with your Gmail email
+            pass: 'tmwy xdbs xrqg azjw'      // Replace with your App Password
         }
     });
 
