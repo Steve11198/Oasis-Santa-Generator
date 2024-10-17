@@ -40,12 +40,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Schedule Secret Santa matching for 1 week later
     document.getElementById("schedule-matching").addEventListener("click", function() {
-        if (participants.length < 2) {
-            alert("You need at least 2 participants to schedule matching.");
+        if (participants.length < 13) {
+            alert("You need at least 13 participants to schedule matching.");
             return;
         }
 
-        alert("Secret Santa matching has been scheduled for one week from today.");
+        alert("Secret Santa matching has been scheduled for 3 days from today.");
         
         const oneWeekFromNow = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
 
