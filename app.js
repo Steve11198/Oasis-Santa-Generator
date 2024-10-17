@@ -40,5 +40,5 @@ cron.schedule('*/2 * * * *', () => {  // Every 2 minutes
     matchAndSendEmails();
 });
 
-// Uncomment this to run the function immediately if you want instant testing
+ Uncomment this to run the function immediately if you want instant testing
 // matchAndSendEmails();
